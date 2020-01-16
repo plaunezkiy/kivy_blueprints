@@ -1,0 +1,42 @@
+<Label>:
+    font_name: 'Lobster'
+    font_size: 60
+    markup: True
+
+<LobsterButton@Button>:
+    background_normal: 'button_down.png'
+    background_down: 'button_normal.png'
+    border: (2, 2, 2, 2)
+    font_name: 'Lobster'
+    font_size: 25
+    bold: True
+
+BoxLayout:
+    orientation: 'vertical'
+    ClockLayout:
+        time_prop: time
+        Label:
+            id: time
+
+    BoxLayout:
+        height: 90
+        orientation: 'horizontal'
+        padding: 20
+        spacing: 20
+        size_hint: (1, None)
+        LobsterButton:
+            id: start_stop
+            text: 'Start'
+            on_press: app.start_stop()
+        LobsterButton:
+            id: reset
+            text: 'Reset'
+            on_press: app.reset()
+            background_normal: 'red_button_down.png'
+            background_down: 'red_button_normal.png'
+    Label:
+        id: stopwatch
+        text: '00:00.[size=40]00[/size]'
+
+
+
